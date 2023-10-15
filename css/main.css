@@ -1,0 +1,302 @@
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --dark-color: #19283f;
+  --green-color: #33d1cc;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.button-to-up {
+  position: fixed;
+  right: 16px;
+  bottom: 13px;
+  height: 60px;
+  width: 70px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+}
+.button-to-up.active {
+  display: flex;
+}
+/* start nav  */
+.navbar {
+  background-color: var(--dark-color);
+}
+.navbar .navbar-nav .nav-link {
+  color: white;
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+  color: var(--green-color);
+}
+
+.navbar .search {
+  color: white;
+  font-size: 14px;
+  border-left: 1px solid var(--green-color);
+}
+.navbar .search svg {
+  padding-left: 4px;
+  color: var(--green-color);
+}
+
+.navbar .main-btn {
+  background-color: var(--red-color);
+  color: var(--yellow-color);
+}
+.navbar .navbar-toggler {
+  color: white;
+
+  font-size: 26px;
+}
+.navbar .navbar-toggler[aria-expanded="true"] {
+  box-shadow: none;
+  border-color: var(--green-color);
+}
+.navbar .navbar-toggler[aria-expanded="false"] {
+  border-color: white;
+  box-shadow: none;
+}
+/* end nav  */
+/* start landing  */
+.landing {
+  background-color: var(--dark-color);
+  min-height: 95vh;
+}
+.landing .text-center{
+  margin-top: 25%;
+}
+@media (max-width: 767px) {
+  .landing .text-center {
+    margin-top: 75%;
+  }
+}
+
+.landing .main-btn {
+  color: var(--yellow-color);
+  background-color: var(--red-color);
+}
+/* end landing  */
+/* start features */
+.features .container .main-title p:after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 3px;
+  background-color: var(--green-color);
+  left: 50%;
+  top: 32%;
+  transform: translateX(-50%);
+}
+
+.features .container .row {
+  margin-top: 20%;
+} 
+.features .container .row  .icons svg:first-child {
+  color: var(--section-color);
+  font-size: 250px;
+  z-index: -1;
+  position: absolute;
+  bottom: 19%;
+  transform: translate(134px, -50%);
+}
+.features .container .row  .icons svg:not(:first-child) {
+  font-size: 80px;
+  color: var(--green-color);
+}
+.features .container .row  .icons h4 {
+  color: var(--yellow-color);
+}
+
+@media (max-width: 767px) {
+  .features .container .main-title p:after {
+    top: 17%;
+    width: 150px;
+    height: 2px;
+  }
+  .features .container .main-title p:after {
+    width: 100px;
+    top: 19%;
+  }
+}
+/* end features */
+/* start our work  */
+.our-work {
+  background-color: var(--section-color);
+}
+.our-work .container .main-title p:after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 3px;
+  background-color: var(--green-color);
+  left: 50%;
+  top: 27%;
+  transform: translateX(-50%);
+}
+@media (max-width: 767px) {
+  .our-work .container .main-title p:after {
+    top: 220px;
+    width: 100px;
+    height: 2px;
+  }
+}
+.our-work ul li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.our-work ul li.active {
+  background-color: var(--red-color);
+  color: var(--yellow-color);
+}
+
+.our-work .box::before {
+  content: attr(data-work);
+  position: absolute;
+  background-color: rgb(51 209 204 / 76%);
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+  font-size: 1.5rem;
+  transform: translateX(calc(-100% - 14px));
+}
+.our-work .box:hover:before {
+  transform: translateX(0);
+}
+
+.our-work .container a {
+  color: var(--yellow-color);
+  background-color: var(--red-color);
+}
+/* end our work  */
+/* start stuf  */
+.stuf .description {
+  max-width: 500px;
+}
+.stuf .container .main-title p:after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 3px;
+  background-color: var(--green-color);
+  left: 50%;
+  top: 110%;
+  transform: translateX(-50%);
+}
+@media (max-width: 767px) {
+  .our-work .container .main-title p:after {
+    top: 220px;
+    width: 100px;
+    height: 2px;
+  }
+}
+.stuf  .main-btn {
+  color: var(--yellow-color);
+  background-color: var(--red-color);
+}
+.stuf img:last-child{
+  margin-left: 180px;
+  width: 1000px;
+}
+@media (max-width: 767px) {
+  .stuf img:last-child{
+    width: 1000px;
+    margin-left: 0;
+  }
+  .stuf .text {
+    text-align: center;
+  }
+}
+/* end stuf  */
+/* start team  */
+.team {
+  background-color: var(--section-color);
+}
+.team .main-title h3 {
+  color: var(--yellow-color);
+}
+.team .box {
+  background-color: white;
+}
+.team .box h4 {
+  background-color: var(--green-color);
+  color: white;
+}
+/* end team  */
+/* start project  */
+.project {
+  background-color: var(--dark-color);
+}
+.main-btn {
+  color: var(--yellow-color);
+  background-color: var(--red-color);
+}
+/* end project  */
+/* start blog  */
+.blog .container .main-title p:after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 3px;
+  background-color: var(--green-color);
+  left: 50%;
+  top: 110%;
+  transform: translateX(-50%);
+}
+@media (max-width: 767px) {
+  .our-work .container .main-title p:after {
+    top: 220px;
+    width: 100px;
+    height: 2px;
+  }
+}
+/* end blog  */
+/* start sub  */
+.subscribe {
+  background-color: var(--yellow-color);
+}
+.subscribe input:first-child {
+  border: none;
+  border-bottom: 1px solid white;
+}
+.subscribe input:first-child:focus {
+  outline: none;
+}
+.subscribe input:last-child {
+  background-color: var(--dark-color);
+  color: var(--yellow-color);
+}
+/* end sub  */
+/* start footer  */
+.footer {
+  background-color: var(--dark-color);
+  font-size: 21px;
+}
+.footer .copyright span:first-child {
+  color: var(--green-color);
+}
+.footer .copyright span:last-child {
+  color: var(--yellow-color);
+}
+/* end footer  */
